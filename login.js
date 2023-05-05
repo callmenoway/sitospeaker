@@ -7,10 +7,10 @@ loginButton.addEventListener("click", (e) => {
     const username = loginForm.username.value;
     const password = loginForm.password.value;
 
-    if (username === "jfkennedy" && password === "jfk2023") {
+    if (username === "jfk" && password === "jfk2023") {
         alert("Ti sei verificato correttamente!");
         location.reload();
-        self.location="gg.html";
+        self.location="dashboard.html";
     } else {
         loginErrorMsg.style.opacity = 1;
     }
