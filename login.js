@@ -8,7 +8,7 @@ loginButton.addEventListener("click", (e) => {
     const password = loginForm.password.value;
 
     if (username === "jfk" && password === "jfk2023") {
-        window.location.href = "https://fancy-caramel-3f5aae.netlify.app"
+        window.location.href = "https://fancy-caramel-3f5aae.netlify.app/"
     } else {
         loginErrorMsg.style.opacity = 1;
     }
