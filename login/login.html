@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="login.css">
+  <title>login by noway</title>
+  <link rel="icon" type="icon" href="/images/ny_stelle_rGL_icon.ico">
+</head>
+<body> 
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <label for="uname"><b> </b></label>
+                        <input type="text" placeholder=" " name="uname" id="email" required>
+                        <label for=""> Username</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <label for="psw"><b> </b></label>
+                        <input type="password" placeholder=" " name="psw" id="password" required>
+                        <label for=""> Password</label>
+                    </div>
+                    <div class="text">
+                        <button type="submit" onClick="auth(event)" >Login</button>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+        <script>
+          function auth(event) {
+                event.preventDefault();
+        
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+        
+                if (email === "JFK" && password === "jfkspeaker") {
+                    window.location.href = "https://fancy-caramel-3f5aae.netlify.app";
+                } else {
+                    alert("Invalid Username or Password");
+                    return;
+                }
+          }
+        </script> 
+</body>
+</html>
